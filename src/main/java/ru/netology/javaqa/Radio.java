@@ -3,6 +3,11 @@ package ru.netology.javaqa;
 public class Radio {
     public int currentRadioStation;
     public int currentVolume;
+    public int numbersOfRadioStations;
+
+    public Radio() {
+        numbersOfRadioStations = 10;
+    }
 
     public int getCurrentVolume() {
         return currentVolume;
@@ -56,5 +61,13 @@ public class Radio {
         } else {
             currentVolume = 0;
         }
+    }
+
+    public int getNumbersOfRadioStations() {
+        return numbersOfRadioStations;
+    }
+
+    public Radio(int numbersOfRadioStations) {
+        this.numbersOfRadioStations = numbersOfRadioStations;
     }
 }

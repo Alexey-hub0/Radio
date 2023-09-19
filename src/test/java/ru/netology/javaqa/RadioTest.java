@@ -112,4 +112,24 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    public void defaultNumberOfRadioStations() {
+        Radio rad = new Radio();
+
+        rad.getNumbersOfRadioStations();
+        int actual = rad.getNumbersOfRadioStations();
+
+        Assertions.assertEquals(10, actual);
+
+    }
+
+    @Test
+    public void changeNumbersOfRadioStations() {
+        Radio rad = new Radio(12);
+
+        int actual = rad.getNumbersOfRadioStations();
+        Assertions.assertEquals(12, actual);
+
+    }
 }
