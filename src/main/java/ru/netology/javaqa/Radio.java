@@ -1,8 +1,21 @@
 package ru.netology.javaqa;
 
 public class Radio {
-    public int currentRadioStation;
-    public int currentVolume;
+    private int currentRadioStation;
+    private int currentVolume;
+    private int numbersOfRadioStations;
+
+    public Radio() {
+        numbersOfRadioStations = 10;
+    }
+
+    public Radio(int numbersOfRadioStations) {
+        this.numbersOfRadioStations = numbersOfRadioStations;
+    }
+
+    public int getNumbersOfRadioStations() {
+        return numbersOfRadioStations;
+    }
 
     public int getCurrentVolume() {
         return currentVolume;
@@ -12,18 +25,18 @@ public class Radio {
         return currentRadioStation;
     }
 
-    public void setCurrentRadioStation(int newCurrentRadioStation) {
-        if (newCurrentRadioStation > 9) {
+    public void setCurrentRadioStation(int CurrentRadioStation) {
+        if (CurrentRadioStation > numbersOfRadioStations - 1) {
             return;
         }
-        if (newCurrentRadioStation < 0) {
+        if (CurrentRadioStation < 0) {
             return;
         }
-        currentRadioStation = newCurrentRadioStation;
+        this.currentRadioStation = CurrentRadioStation;
     }
 
     public void next() {
-        if (currentRadioStation == 9) {
+        if (currentRadioStation == numbersOfRadioStations - 1) {
             currentRadioStation = 0;
         } else {
             currentRadioStation = currentRadioStation + 1;
@@ -32,7 +45,7 @@ public class Radio {
 
     public void prev() {
         if (currentRadioStation == 0) {
-            currentRadioStation = 9;
+            currentRadioStation = numbersOfRadioStations - 1;
         } else {
             currentRadioStation = currentRadioStation - 1;
         }
@@ -50,11 +63,13 @@ public class Radio {
         }
     }
 
-    public void deincreaseVolume() {
+    public void decreaseVolume() {
         if (currentVolume > 0) {
             currentVolume = currentVolume - 1;
         } else {
             currentVolume = 0;
         }
     }
+
+
 }
