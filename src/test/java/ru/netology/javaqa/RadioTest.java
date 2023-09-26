@@ -132,4 +132,15 @@ public class RadioTest {
         Assertions.assertEquals(12, actual);
 
     }
+
+    @Test
+    public void RadioStationNewChange() {
+        Radio rad = new Radio(20);
+        rad.setCurrentRadioStation(9);
+        rad.next();
+        int expected = 10;
+        int actual = rad.getCurrentRadioStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
 }
