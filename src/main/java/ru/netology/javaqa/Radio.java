@@ -45,7 +45,7 @@ public class Radio {
 
     public void prev() {
         if (currentRadioStation == 0) {
-            currentRadioStation = 9;
+            currentRadioStation = numbersOfRadioStations - 1;
         } else {
             currentRadioStation = currentRadioStation - 1;
         }
@@ -63,7 +63,7 @@ public class Radio {
         }
     }
 
-    public void deincreaseVolume() {
+    public void decreaseVolume() {
         if (currentVolume > 0) {
             currentVolume = currentVolume - 1;
         } else {
